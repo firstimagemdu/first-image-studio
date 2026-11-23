@@ -1,0 +1,109 @@
+====================================================================
+FIRST IMAGE STUDIO ERP - STEP-BY-STEP INSTALLATION GUIDE
+====================================================================
+
+1. PREREQUISITES (தேவையானவை)
+--------------------------------------------------------------------
+- Windows PC / Laptop (or local/LAN server system)
+- Node.js installed (LTS or current version from https://nodejs.org)
+- Modern web browser (Google Chrome / Microsoft Edge)
+- First Image Studio ERP Backend & DB folder (e.g., First_Image_Studio_ERP_v70_Backend_DB)
+
+
+2. EXTRACT THE PROJECT FOLDER (கோப்புகளை Extract செய்யவும்)
+--------------------------------------------------------------------
+Step 2.1: Download the ZIP file (for example, First_Image_Studio_ERP_v70_Backend_DB.zip).
+Step 2.2: Right-click the ZIP file and select "Extract All...".
+Step 2.3: Extract it to an easy location, such as:
+          C:\Users\rooba\Downloads\First_Image_Studio_ERP_v70_Backend_DB
+Step 2.4: Open the extracted folder and confirm these files exist:
+          - server.js
+          - db.js
+          - package.json
+          - public\index.html
+
+
+3. OPEN COMMAND PROMPT IN THE PROJECT FOLDER
+--------------------------------------------------------------------
+Option A (Quickest):
+  - Open the project folder in Windows File Explorer.
+  - Click the address bar at the top, type: cmd
+  - Press Enter.
+
+Option B (Manual cd):
+  - Open Command Prompt (cmd).
+  - Type your actual folder path (do NOT type <folder-path>):
+    cd C:\Users\rooba\Downloads\First_Image_Studio_ERP_v70_Backend_DB
+  - Press Enter.
+
+
+4. INSTALL DEPENDENCIES (npm install)
+--------------------------------------------------------------------
+Step 4.1: In the Command Prompt inside the project folder, run:
+          npm install
+
+Step 4.2: Wait until package installation finishes and the command prompt
+          returns to the folder path.
+          (Note: Minor "npm warn deprecated" notices can be ignored unless
+          a red ERR! stops installation.)
+
+
+5. START THE BACKEND SERVER & DATABASE (node server.js)
+--------------------------------------------------------------------
+Step 5.1: Run the server directly:
+          node server.js
+
+Step 5.2: Look for messages similar to:
+          First Image Studio Backend + DB running on http://localhost:4580
+          Database file: ...\data\first_image_studio.sqlite
+
+Step 5.3: KEEP THIS COMMAND PROMPT WINDOW OPEN while using the ERP.
+          Do not close it, and do not type URLs like http://... inside cmd.
+          To stop the server later, press Ctrl + C in this window.
+
+
+6. OPEN THE ERP ON YOUR LOCAL SYSTEM
+--------------------------------------------------------------------
+Step 6.1: Open Google Chrome (or Edge).
+Step 6.2: In the browser address bar, enter:
+          http://localhost:4580
+          (or http://127.0.0.1:4580)
+Step 6.3: Press Enter. The First Image Studio ERP login screen will open.
+Step 6.4: Log in with your Admin or Staff credentials.
+
+
+7. CONNECT OTHER SYSTEMS / MOBILES ON THE SAME WI-FI / LAN
+--------------------------------------------------------------------
+Step 7.1: Open a second Command Prompt window on the server PC.
+Step 7.2: Run:
+          ipconfig
+Step 7.3: Note your "IPv4 Address" (for example: 192.168.1.25).
+Step 7.4: On another computer or mobile connected to the same Wi-Fi/LAN,
+          open a browser and go to:
+          http://<YOUR-IPV4-ADDRESS>:4580
+          Example: http://192.168.1.25:4580
+Step 7.5: If blocked on Windows, allow port 4580 or Node.js in Windows
+          Defender Firewall for Private networks.
+
+
+8. ADMIN PASSWORD RECOVERY (PIN / WHATSAPP OTP)
+--------------------------------------------------------------------
+Step 8.1: On the login screen, click "Forgot Username / Password?".
+Step 8.2: Recovery is restricted to the Admin account.
+Step 8.3: Choose "Recovery PIN" or "Verify via OTP".
+          - If using OTP, click "Send OTP to WhatsApp" and enter the
+            6-digit OTP (configured via webhook/settings).
+Step 8.4: Enter the mandatory New Admin Password and submit to update
+          the password in the database.
+
+
+9. TROUBLESHOOTING QUICK CHECKS
+--------------------------------------------------------------------
+- "This site can't be reached / ERR_CONNECTION_REFUSED":
+  Make sure "node server.js" is currently running and its Command Prompt
+  window was not closed.
+- "'http:' is not recognized...":
+  Type http://localhost:4580 in the browser address bar, not in cmd.
+- Data backup:
+  Keep a regular copy of the "data" folder inside your project directory.
+====================================================================

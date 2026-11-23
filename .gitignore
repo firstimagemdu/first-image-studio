@@ -1,0 +1,5 @@
+node_modules/
+data/studio_state.json
+data/latest_auto_backup.json
+data/backups/*.json
+.env

@@ -1,0 +1,12 @@
+{
+  "name": "first-image-studio-erp-cloud-atoz",
+  "version": "7.0.0",
+  "description": "First Image Studio ERP Complete A-to-Z Cloud Deployment Bundle",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
